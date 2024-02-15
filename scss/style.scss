@@ -1,0 +1,453 @@
+/******* Bootstrap Theming ********/
+
+$primary: #17a2b8;
+$secondary: #00394f;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+);
+
+$font-family-sans-serif: 'Nunito', sans-serif;
+
+$headings-font-family: 'Handlee', cursive;
+
+$body-color: #666666;
+
+$headings-color: $secondary;
+
+$headings-font-weight: bold;
+
+$enable-responsive-font-sizes: true;
+
+$border-radius: 5px;
+
+$btn-border-radius: 30px;
+
+@import "bootstrap/scss/bootstrap";
+
+
+/********** Custom CSS ************/
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $primary;
+}
+
+.section-title span {
+    position: relative;
+    background: #ffffff;
+    z-index: 1;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $primary;
+}
+
+[class^=flaticon-]:before,
+[class*=" flaticon-"]:before,
+[class^=flaticon-]:after,
+[class*=" flaticon-"]:after {
+    font-size: inherit;
+    margin-left: 0;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 11;
+    -webkit-animation: action 1s infinite alternate;
+    animation: action 1s infinite alternate;
+}
+
+@-webkit-keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 30px 15px;
+    color: $secondary;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: $primary;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        padding: 10px 15px;
+    }
+}
+
+.post-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+    padding: 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.post-carousel .owl-nav .owl-prev,
+.post-carousel .owl-nav .owl-next {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $secondary;
+    background: $primary;
+    border-radius: 30px;
+    font-size: 18px;
+    opacity: .1;
+    transition: .3s;
+}
+
+.post-carousel:hover .owl-nav .owl-prev,
+.post-carousel:hover .owl-nav .owl-next {
+    opacity: 1;
+}
+
+.portfolio-item .portfolio-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+    opacity: 1;
+}
+
+.team .team-social {
+    top: 0;
+    background: rgba(23, 162, 184, .8);
+    opacity: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+.team:hover .team-social {
+    opacity: 1;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #dddddd;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: $primary;
+}
+
+.contact-form .help-block ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Media Queries */
+
+@mixin mq-xs {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-sm {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-md {
+    @media (min-width: 720px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-lg {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  }
+  
+  $background: #f7f7f7;
+  $box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
+  $border: 1px solid rgba(191, 191, 191, 0.4);
+  $items: 5;
+  $rows: ceil($items/2);
+  
+  /* Card sizing */
+  
+  $card-height: 400px;
+  $card-width: 450px;
+  $inner-margin: 15px;
+  $number-size: 35px;
+  $stagger: 180px;
+  $outer-margin: 90px;
+  $marker-size: 9px;
+  
+  /* Colors */
+  
+  $steps: #46b8e9;
+  $colors: #46b8e9,
+  #3ee9d1,
+  #ce43eb,
+  #4d92eb;
+  $timeline: #bdbdbd;
+  
+  /* Calculations */
+  
+  $container-height: $rows * ($card-height + $outer-margin) + $stagger;
+  $container-width: $card-width*2 + $outer-margin*3;
+  $head-height: $number-size + 50;
+  $body-height: $card-height - $head-height;
+  $marker-dist: $card-width + $outer-margin/2 - $marker-size/2;
+  
+  /* Placeholders */
+  
+  @include mq-lg {
+    %arrow {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+    }
+    %marker {
+      position: absolute;
+      content: "";
+      width: $marker-size;
+      height: $marker-size;
+      background-color: $timeline;
+      border-radius: $marker-size;
+      box-shadow: 0px 0px 2px 8px $background;
+    }
+  }
+  
+  
+  /* Some Cool Stuff */
+  
+  $counter: $items - $rows + 2;
+  @for $i from 1 through $rows {
+    .demo-card:nth-child(#{$i*2-1})   { order: $i }
+    .demo-card:nth-child(#{$i*2})     { order: $counter }
+    $counter: $counter + 1;
+  }
+  
+  /* Border Box */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Fonts */
+  
+  body {
+    font-family: Roboto;
+  }
+  
+  #timeline {
+    padding: 100px 0;
+    background: $background;
+    border-top: $border;
+    border-bottom: $border;
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 200;
+      margin-bottom: 20px;
+    }
+    p.leader {
+      text-align: center;
+      max-width: 90%;
+      margin: auto;
+      margin-bottom: 45px;
+    }
+    .demo-card-wrapper {
+      position: relative;
+      margin: auto;
+      @include mq-lg {
+        display: flex;
+        flex-flow: column wrap;
+        width: $container-width;
+        height: $container-height;
+        margin: 0 auto;
+      }
+      &::after {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        border-left: $border;
+        @include mq-lg {
+          border-left: 1px solid $timeline;
+        }
+      }
+    }
+    .demo-card {
+      position: relative;
+      display: block;
+      margin: 10px auto 80px;
+      max-width: 94%;
+      z-index: 2;
+      @include mq-sm {
+        max-width: 60%;
+        box-shadow: $box-shadow;
+      }
+      @include mq-md {
+        max-width: 40%;
+      }
+      @include mq-lg {
+        max-width: $card-width;
+        height: $card-height;
+        margin: $outer-margin;
+        margin-top: $outer-margin/2;
+        margin-bottom: $outer-margin/2;
+        &:nth-child(odd) {
+          margin-right: $outer-margin/2;
+          .head::after {
+            @extend %arrow;
+            border-left-width: 15px;
+            border-left-style: solid;
+            left: 100%;
+          }
+          .head::before {
+            @extend %marker;
+            left: $marker-dist + 1;
+          }
+        }
+        &:nth-child(even) {
+          margin-left: $outer-margin/2;
+          .head::after {
+            @extend %arrow;
+            border-right-width: 15px;
+            border-right-style: solid;
+            right: 100%;
+          }
+          .head::before {
+            @extend %marker;
+            right: $marker-dist - 1;
+          }
+        }
+        &:nth-child(2) {
+          margin-top: $stagger;
+        }
+      }
+      .head {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-weight: 400;
+        .number-box {
+          display: inline;
+          float: left;
+          margin: $inner-margin;
+          padding: 10px;
+          font-size: $number-size;
+          line-height: $number-size;
+          font-weight: 600;
+          background: rgba(0, 0, 0, 0.17);
+        }
+        h2 {
+          text-transform: uppercase;
+          font-size: 1.3rem;
+          font-weight: inherit;
+          letter-spacing: 2px;
+          margin: 0;
+          padding-bottom: 6px;
+          line-height: 1rem;
+          @include mq-sm {
+            font-size: 165%;
+            line-height: 1.2rem;
+          }
+          span {
+            display: block;
+            font-size: 0.6rem;
+            margin: 0;
+            @include mq-sm {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+      .body {
+        background: #fff;
+        border: $border;
+        border-top: 0;
+        padding: $inner-margin;
+        @include mq-lg {
+          height: $body-height;
+        }
+        p {
+          font-size: 14px;
+          line-height: 18px;
+          margin-bottom: $inner-margin;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      @for $i from 1 through $items {
+        &--step#{$i} {
+          $color: nth($colors, ((($i - 1) % 4) + 1));
+          background-color: $color;
+          .head::after {
+            border-color: $color;
+          }
+        }
+      }
+    }
+  }
