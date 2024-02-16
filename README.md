@@ -1,6 +1,6 @@
 # README.md - Jalovi Papelaria 
 
-Bem-vindo ao repositório do site empresarial da Papelaria XYZ! Este é um projeto em fase de desenvolvimento, focado em oferecer uma experiência de usuário excepcional, com a utilização de tecnologias modernas como HTML5, CSS, Bootstrap e JavaScript.
+Bem-vindo ao repositório do site empresarial da Jalovi Papelaria ! Este é um projeto em fase de desenvolvimento, focado em oferecer uma experiência de usuário excepcional, com a utilização de tecnologias modernas como HTML5, CSS, Bootstrap e JavaScript.
 
 ## Visão Geral
 
