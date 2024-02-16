@@ -24,7 +24,7 @@ Nosso foco na usabilidade do site se concentra em alguns pontos-chave:
 
 ## Contribuindo
 
-Se você deseja contribuir para o desenvolvimento do site da Papelaria XYZ, fique à vontade para enviar pull requests ou relatar problemas encontrados. Estamos sempre abertos a melhorias e feedback da comunidade.
+Se você deseja contribuir para o desenvolvimento do site da Jalovi Papelaria , fique à vontade para enviar pull requests ou relatar problemas encontrados. Estamos sempre abertos a melhorias e feedback da comunidade.
 
 ## Contato
 
